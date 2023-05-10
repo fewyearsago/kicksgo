@@ -1,4 +1,5 @@
 import React from 'react';
+import ForHimAndHer from './components/ForHImAndHer';
 import Header from './components/Header';
 import './index.css';
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <div className="container">
         <Header />
+        <ForHimAndHer />
       </div>
     </>
   );

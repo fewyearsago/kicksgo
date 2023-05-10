@@ -1,0 +1,50 @@
+@import url('../../assets/fonts/index.scss');
+
+.root {
+  display: flex;
+  padding-top: 70px;
+  &Img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    filter: brightness(70%);
+  }
+  &Title {
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    font-size: 40px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &::selection {
+      background-color: #000;
+    }
+    &::before {
+      content: '';
+      width: 50px;
+      top: 50%;
+      left: -70px;
+      position: absolute;
+      height: 2px;
+      background-color: #fff;
+    }
+    &::after {
+      content: '';
+      width: 50px;
+      top: 50%;
+      right: -70px;
+      position: absolute;
+      height: 2px;
+      background-color: #fff;
+    }
+  }
+  &Men {
+    position: relative;
+  }
+  &Women {
+    position: relative;
+  }
+}

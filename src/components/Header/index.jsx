@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className={style.root}>
       <a className={style.rootLogo} href="#">
-        KicksCo
+        KicksGo
       </a>
       <ul className={style.rootMenu}>
         {list.map((obj, i) => (
@@ -17,10 +17,7 @@ const Header = () => {
       </ul>
       <div className={style.rootInfo}>
         <div className={style.rootInfoFav}>
-          <svg
-            height="20px"
-            viewBox="0 0 32 32"
-            xmlns="http://www.w3.org/2000/svg">
+          <svg height="20px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <style></style>
             </defs>
