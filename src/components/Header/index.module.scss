@@ -1,0 +1,28 @@
+@import url('../../assets/fonts/index.scss');
+
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  font-family: 'Nunito', sans-serif;
+  &Menu {
+    display: flex;
+    &Item {
+      margin-left: 55px;
+      cursor: pointer;
+      &:hover {
+        color: #80471c;
+      }
+    }
+  }
+  &Info {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    svg {
+      cursor: pointer;
+    }
+  }
+}
