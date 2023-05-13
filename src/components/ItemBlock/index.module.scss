@@ -1,7 +1,60 @@
 @import url('../../assets/fonts/index.scss');
 
 .root {
-  min-height: 400px;
+  min-height: 450px;
+  cursor: pointer;
+  transition: all 0.3s;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  &Item {
+    position: relative;
+  }
+  &Picture {
+    box-shadow: 1px 3px 10px #d4d4d4;
+    position: relative;
+    min-height: 300px;
+    &Btns {
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s;
+      button {
+        cursor: pointer;
+      }
+      &Like {
+        right: 20px;
+        border: none;
+        background-color: transparent;
+        top: 20px;
+        position: absolute;
+        :hover {
+          stroke: #000;
+        }
+      }
+      &Cart {
+        left: 50%;
+        top: 85%;
+        background-color: #000;
+        border: none;
+        padding: 5px 15px;
+        color: #f5f5f5;
+        border-radius: 20px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        &:hover {
+          background-color: #333333;
+          color: #f5f5f5;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    transform: scale(1.06);
+    .rootSizes,
+    .rootPictureBtns {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
   &Text {
     font-family: 'Mulish', sans-serif;
     width: 275px;
@@ -14,6 +67,29 @@
   }
   &Img {
     width: 275px;
-    box-shadow: 1px 3px 10px #d4d4d4;
+  }
+  &Sizes {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    width: 280px;
+    flex-wrap: wrap;
+    &Btn {
+      border: none;
+      background-color: transparent;
+      margin-top: 20px;
+      padding: 5px 10px;
+      border-radius: 20px;
+      transition: all 0.3s;
+      font-size: 11px;
+      cursor: pointer;
+      &:hover {
+        color: #fff;
+        background-color: #000;
+      }
+    }
   }
 }
