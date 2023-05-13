@@ -1,8 +1,18 @@
 @import url('../../assets/fonts/index.scss');
 
+.main {
+  padding-bottom: 150px;
+}
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 10px;
+  min-height: 100%;
+}
+
 .root {
   display: flex;
-  padding-top: 70px;
+  padding-top: 190px;
   &Img {
     object-fit: cover;
     height: 100%;
