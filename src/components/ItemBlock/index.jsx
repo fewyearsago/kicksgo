@@ -1,7 +1,12 @@
 import React from 'react';
 import style from './index.module.scss';
 
-const ItemBlock = ({ imgUrl, id, price, title }) => {
+const ItemBlock = ({ imgUrl, id, price, title, sizes }) => {
+  const [activeIndex, setActiveIndex] = React.useState(0);
+  const list = [...sizes];
+  const onClickActiveIndex = (id) => {
+    setActiveIndex(id);
+  };
   return (
     <div className={style.root}>
       <div className={style.rootItem}>
@@ -31,10 +36,14 @@ const ItemBlock = ({ imgUrl, id, price, title }) => {
         <p className={style.rootTextPrice}>{price}</p>
       </div>
       <div className={style.rootSizes}>
-        <button className={style.rootSizesBtn}>9 US</button>
-        <button className={style.rootSizesBtn}>10 US</button>
-        <button className={style.rootSizesBtn}>11.5 US</button>
-        <button className={style.rootSizesBtn}>11.5 US</button>
+        {list.map((e, i) => (
+          <button
+            key={i}
+            onClick={() => onClickActiveIndex(i)}
+            className={activeIndex === i ? style.rootSizesBtnActive : style.rootSizesBtn}>
+            {e}
+          </button>
+        ))}
       </div>
     </div>
   );

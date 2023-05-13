@@ -21,7 +21,14 @@ const Catalog = () => {
         <div className={style.rootCatalogList}>
           {isLoading
             ? items.map((e, i) => (
-                <ItemBlock key={i} id={e.id} title={e.title} price={e.price} imgUrl={e.imgUrl} />
+                <ItemBlock
+                  sizes={e.sizes}
+                  key={i}
+                  id={e.id}
+                  title={e.title}
+                  price={e.price}
+                  imgUrl={e.imgUrl}
+                />
               ))
             : 'Loading...'}
         </div>

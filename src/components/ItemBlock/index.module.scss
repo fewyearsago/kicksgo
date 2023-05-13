@@ -64,6 +64,9 @@
       line-height: 28px;
       margin: 14px 0;
     }
+    &Price {
+      margin-bottom: 20px;
+    }
   }
   &Img {
     width: 275px;
@@ -74,18 +77,24 @@
     transition: all 0.3s;
     display: flex;
     align-items: center;
+    margin-left: 5px;
     column-gap: 5px;
     width: 280px;
     flex-wrap: wrap;
-    &Btn {
+    button {
       border: none;
-      background-color: transparent;
-      margin-top: 20px;
       padding: 5px 10px;
       border-radius: 20px;
       transition: all 0.3s;
       font-size: 11px;
+      border: none;
       cursor: pointer;
+    }
+    &Btn {
+      &Active {
+        background-color: #000;
+        color: #fff;
+      }
       &:hover {
         color: #fff;
         background-color: #000;
