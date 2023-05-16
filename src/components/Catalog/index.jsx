@@ -3,10 +3,15 @@ import React from 'react';
 import ItemBlock from '../ItemBlock';
 import Pagination from '../Pagination';
 import Skeleton from '../Skeleton';
+import Sort from '../Sort';
 import style from './index.module.scss';
 
 const Catalog = () => {
   const [items, setItems] = React.useState([]);
+  const [sortType, setSortType] = React.useState({
+    name: 'популярности',
+    sortProperty: 'rating',
+  });
   const [isLoading, setIsLoading] = React.useState(true);
   const [currentPage, setCurrentPage] = React.useState(1);
   const ShortSkeleton = [...new Array(4)].map(() => <Skeleton />);
@@ -25,7 +30,7 @@ const Catalog = () => {
     const getData = async () => {
       try {
         const { data } = await axios.get(
-          `https://644189e3792fe886a8aa1467.mockapi.io/items?page=${currentPage}&limit=4`,
+          `https://644189e3792fe886a8aa1467.mockapi.io/items?page=${currentPage}&limit=4&sortBy=${sortType.sortProperty}`,
         );
         setItems(data);
       } catch {
@@ -36,13 +41,18 @@ const Catalog = () => {
     };
 
     getData();
-  }, [currentPage]);
+  }, [currentPage, sortType]);
 
   return (
     <div className={style.root}>
       <div className={style.container}>
-        <h1 className={style.rootTitle}>Каталог ❤️</h1>
-        <div className={style.rootCatalogList}>{isLoading ? ShortSkeleton : ShortItemBlock}</div>
+        <div className={style.rootCatalogWrapper}>
+          <h1 className={style.rootTitle}>Каталог ❤️</h1>
+          <Sort sortTitle={sortType} onChangeSort={(i) => setSortType(i)} />
+        </div>
+        <div className={style.rootCatalogList}>
+          {isLoading ? ShortSkeleton : ShortItemBlock}
+        </div>
         <Pagination onChangePage={(number) => setCurrentPage(number)} />
       </div>
     </div>

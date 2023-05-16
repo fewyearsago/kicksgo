@@ -1,0 +1,37 @@
+@import url('../../assets/fonts/index.scss');
+
+.root {
+  &Sort {
+    position: relative;
+    &Popup {
+      border-radius: 10px;
+      position: absolute;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
+      width: 170px;
+      right: 0;
+      overflow: hidden;
+      top: 40px;
+      background-color: rgb(255, 255, 255);
+      min-height: 100px;
+      z-index: 1000;
+      li {
+        cursor: pointer;
+        padding: 15px;
+      }
+    }
+    font-family: 'Mulish', sans-serif;
+    &Label {
+      font-size: 18px;
+    }
+    &Title {
+      cursor: pointer;
+      color: #8860ff;
+    }
+    &Item {
+      &Active {
+        color: #000;
+        background-color: #d6c8ff;
+      }
+    }
+  }
+}
