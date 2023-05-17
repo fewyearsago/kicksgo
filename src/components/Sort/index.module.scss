@@ -3,11 +3,21 @@
 .root {
   &Sort {
     position: relative;
+
+    &Main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      svg {
+        fill: #444444;
+      }
+    }
     &Popup {
+      font-size: 15px;
       border-radius: 10px;
       position: absolute;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
-      width: 170px;
+      width: 200px;
       right: 0;
       overflow: hidden;
       top: 40px;
@@ -20,11 +30,10 @@
       }
     }
     font-family: 'Mulish', sans-serif;
-    &Label {
-      font-size: 18px;
-    }
+
     &Title {
       cursor: pointer;
+      margin-left: 5px;
       color: #8860ff;
     }
     &Item {

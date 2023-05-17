@@ -33,7 +33,7 @@ const ItemBlock = ({ imgUrl, id, price, title, sizes }) => {
       </div>
       <div className={style.rootText}>
         <h1 className={style.rootTextTitle}>{title}</h1>
-        <p className={style.rootTextPrice}>{price}</p>
+        <p className={style.rootTextPrice}>от {price} $</p>
       </div>
       <div className={style.rootSizes}>
         {list.map((e, i) => (
