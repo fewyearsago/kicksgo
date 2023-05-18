@@ -13,7 +13,10 @@ const ItemBlock = ({ imgUrl, id, price, title, sizes }) => {
         <div className={style.rootPicture}>
           <div className={style.rootPictureBtns}>
             <button className={style.rootPictureBtnsLike}>
-              <svg height="20px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                height="20px"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <style></style>
                 </defs>
@@ -26,7 +29,6 @@ const ItemBlock = ({ imgUrl, id, price, title, sizes }) => {
                 </g>
               </svg>
             </button>
-            <button className={style.rootPictureBtnsCart}>В корзину</button>
           </div>
           <img className={style.rootImg} src={imgUrl} alt="" />
         </div>
@@ -40,7 +42,9 @@ const ItemBlock = ({ imgUrl, id, price, title, sizes }) => {
           <button
             key={i}
             onClick={() => onClickActiveIndex(i)}
-            className={activeIndex === i ? style.rootSizesBtnActive : style.rootSizesBtn}>
+            className={
+              activeIndex === i ? style.rootSizesBtnActive : style.rootSizesBtn
+            }>
             {e}
           </button>
         ))}
