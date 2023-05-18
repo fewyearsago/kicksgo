@@ -5,7 +5,6 @@ import Pagination from '../Pagination';
 import Skeleton from '../Skeleton';
 import Sort from '../Sort';
 import style from './index.module.scss';
-
 const Catalog = () => {
   const [items, setItems] = React.useState([]);
   const [sortType, setSortType] = React.useState({

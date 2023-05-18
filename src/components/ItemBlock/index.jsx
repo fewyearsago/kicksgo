@@ -1,8 +1,21 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../redux/slices/favoriteSlice';
 import style from './index.module.scss';
 
 const ItemBlock = ({ imgUrl, id, price, title, sizes }) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
+  const dispatch = useDispatch();
+  const onClickAddFav = () => {
+    const item = {
+      id,
+      price,
+      title,
+      sizes,
+      imgUrl,
+    };
+    dispatch(addItem(item));
+  };
   const list = [...sizes];
   const onClickActiveIndex = (id) => {
     setActiveIndex(id);
@@ -12,14 +25,8 @@ const ItemBlock = ({ imgUrl, id, price, title, sizes }) => {
       <div className={style.rootItem}>
         <div className={style.rootPicture}>
           <div className={style.rootPictureBtns}>
-            <button className={style.rootPictureBtnsLike}>
-              <svg
-                height="20px"
-                viewBox="0 0 32 32"
-                xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <style></style>
-                </defs>
+            <button onClick={onClickAddFav} className={style.rootPictureBtnsLike}>
+              <svg height="20px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                 <title />
                 <g data-name="Layer 54" id="Layer_54">
                   <path
@@ -42,9 +49,7 @@ const ItemBlock = ({ imgUrl, id, price, title, sizes }) => {
           <button
             key={i}
             onClick={() => onClickActiveIndex(i)}
-            className={
-              activeIndex === i ? style.rootSizesBtnActive : style.rootSizesBtn
-            }>
+            className={activeIndex === i ? style.rootSizesBtnActive : style.rootSizesBtn}>
             {e}
           </button>
         ))}
