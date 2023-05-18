@@ -14,7 +14,6 @@ const Catalog = () => {
   });
   const [isLoading, setIsLoading] = React.useState(true);
   const [currentPage, setCurrentPage] = React.useState(1);
-
   const ShortSkeleton = [...new Array(4)].map((_, i) => <Skeleton key={i} />);
   const ShortItemBlock = items.map((e, i) => (
     <ItemBlock

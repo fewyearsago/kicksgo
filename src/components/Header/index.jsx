@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import style from './index.module.scss';
 const Header = () => {
-  const list = ['Каталог', 'FAQ', 'Отзывы', 'Контакты'];
+  const list = ['FAQ', 'Отзывы', 'Контакты'];
   return (
     <div className={style.root}>
       <div className={style.container}>
         <div className={style.rootInner}>
-          <a className={style.rootInnerLogo} href="#">
+          <Link className={style.rootInnerLogo} to="/">
             KicksGo
-          </a>
+          </Link>
           <ul className={style.rootInnerMenu}>
             {list.map((obj, i) => (
               <li className={style.rootInnerMenuItem} key={i}>

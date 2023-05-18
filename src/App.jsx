@@ -1,15 +1,18 @@
 import React from 'react';
-import Catalog from './components/Catalog';
-import ForHimAndHer from './components/ForHImAndHer';
 import Header from './components/Header';
+import Home from './pages/Home';
+import { Routes, Route } from 'react-router-dom';
+import PageNotFound from './pages/PageNotFound';
 import './index.css';
 
 function App() {
   return (
     <>
       <Header />
-      <ForHimAndHer />
-      <Catalog />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
     </>
   );
 }
