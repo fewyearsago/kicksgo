@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React from 'react';
+import { Navigate } from 'react-router-dom';
 import ItemBlock from '../ItemBlock';
 import Pagination from '../Pagination';
 import Skeleton from '../Skeleton';
 import Sort from '../Sort';
 import style from './index.module.scss';
+
 const Catalog = () => {
   const [items, setItems] = React.useState([]);
   const [sortType, setSortType] = React.useState({
@@ -13,6 +15,7 @@ const Catalog = () => {
   });
   const [isLoading, setIsLoading] = React.useState(true);
   const [currentPage, setCurrentPage] = React.useState(1);
+
   const ShortSkeleton = [...new Array(4)].map((_, i) => <Skeleton key={i} />);
   const ShortItemBlock = items.map((e, i) => (
     <ItemBlock
@@ -52,7 +55,9 @@ const Catalog = () => {
           <h1 className={style.rootTitle}>Каталог ❤️</h1>
           <Sort sortTitle={sortType} onChangeSort={(i) => setSortType(i)} />
         </div>
-        <div className={style.rootCatalogList}>{isLoading ? ShortSkeleton : ShortItemBlock}</div>
+        <div className={style.rootCatalogList}>
+          {isLoading ? ShortSkeleton : ShortItemBlock}
+        </div>
         <Pagination onChangePage={(number) => setCurrentPage(number)} />
       </div>
     </div>

@@ -29,7 +29,7 @@
           top: 20px;
           position: absolute;
           svg path {
-            fill: red;
+            fill: rgb(185, 0, 0);
             transition: all 0.3s;
           }
         }
@@ -88,12 +88,12 @@
     }
     &Btn {
       &Active {
-        background-color: #e50c7d;
+        background-color: #323232;
         color: #fff;
       }
       &:hover {
-        color: #e50c7d;
-        background-color: #fff;
+        color: #240f0f;
+        background-color: rgb(221, 221, 221);
       }
     }
   }

@@ -57,6 +57,19 @@
       align-items: center;
       column-gap: 10px;
       margin-left: 50px;
+      &Fav {
+        position: relative;
+        &Full {
+          content: '';
+          bottom: 3px;
+          right: -1px;
+          width: 10px;
+          border-radius: 50%;
+          background-color: rgb(255, 0, 0);
+          height: 10px;
+          position: absolute;
+        }
+      }
       &Cart {
         position: relative;
         cursor: pointer;

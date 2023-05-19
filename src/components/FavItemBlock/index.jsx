@@ -9,7 +9,7 @@ const FavItemBlock = ({ title, sizes, price, imgUrl, id }) => {
     <div className={style.root}>
       <img className={style.rootImg} src={imgUrl} alt="" />
       <h6 className={style.rootTitle}>{title}</h6>
-      <span className={style.rootPrice}>{price}</span>
+      <span className={style.rootPrice}>от {price} $</span>
       <button onClick={() => dispatch(remItem(id))} className={style.rootBtn}>
         Удалить из избранных
       </button>

@@ -1,8 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import style from './index.module.scss';
 const Header = () => {
   const list = ['FAQ', 'Отзывы', 'Контакты'];
+  const favs = useSelector((state) => state.favorite.items);
   return (
     <div className={style.root}>
       <div className={style.container}>
@@ -19,6 +21,9 @@ const Header = () => {
           </ul>
           <div className={style.rootInnerInfo}>
             <div className={style.rootInnerInfoFav}>
+              {favs.length > 0 && (
+                <span className={style.rootInnerInfoFavFull}></span>
+              )}
               <Link to="/favorites">
                 <svg
                   height="20px"
