@@ -13,21 +13,32 @@
     position: relative;
     height: 285px;
     &Btns {
-      visibility: hidden;
-      opacity: 0;
       transition: all 0.3s;
       button {
         cursor: pointer;
       }
       &Like {
+        visibility: hidden;
+        opacity: 0;
+        &Active {
+          transition: all 0.3s;
+          outline: none;
+          right: 20px;
+          border: none;
+          background-color: transparent;
+          top: 20px;
+          position: absolute;
+          svg path {
+            fill: red;
+            transition: all 0.3s;
+          }
+        }
+        outline: none;
         right: 20px;
         border: none;
         background-color: transparent;
         top: 20px;
         position: absolute;
-        :hover {
-          stroke: #000;
-        }
       }
     }
   }
@@ -35,7 +46,7 @@
   &:hover {
     transform: scale(1.06);
     .rootSizes,
-    .rootPictureBtns {
+    .rootPictureBtnsLike {
       visibility: visible;
       opacity: 1;
     }

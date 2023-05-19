@@ -1,10 +1,17 @@
 @import url('../../assets/fonts/index.scss');
 .root {
-  font-size: 26px;
+  text-align: center;
+  &Box {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
   padding-top: 200px;
+  font-family: 'Nunito';
   &Title {
     font-size: 30px;
-    font-family: 'Nunito';
   }
   &Inner {
     display: grid;
