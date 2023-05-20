@@ -9,13 +9,17 @@ const FavItemBlock = ({ title, sizes, price, imgUrl, id }) => {
   return (
     <div className={style.root}>
       <img className={style.rootImg} src={imgUrl} alt="" />
-      <Link className={style.Link} to={'/sneakers/' + id}>
-        <h6 className={style.rootTitle}>{title}</h6>
-      </Link>
-      <span className={style.rootPrice}>от {price} $</span>
-      <button onClick={() => dispatch(remItem(id))} className={style.rootBtn}>
-        -
-      </button>
+      <div className={style.rootText}>
+        <Link className={style.Link} to={'/sneakers/' + id}>
+          <h6 className={style.rootTitle}>{title}</h6>
+        </Link>
+        <span className={style.rootTextPrice}>от {price} $</span>
+        <button
+          onClick={() => dispatch(remItem(id))}
+          className={style.rootTextBtn}>
+          —
+        </button>
+      </div>
     </div>
   );
 };
