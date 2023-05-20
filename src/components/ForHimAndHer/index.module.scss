@@ -13,6 +13,9 @@
 .root {
   display: flex;
   padding-top: 170px;
+  &Link {
+    cursor: pointer;
+  }
   &Img {
     object-fit: cover;
     height: 100%;

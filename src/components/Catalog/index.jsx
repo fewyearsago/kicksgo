@@ -48,18 +48,20 @@ const Catalog = () => {
   }, [currentPage, sortType]);
 
   return (
-    <div className={style.root}>
-      <div className={style.container}>
-        <div className={style.rootCatalogWrapper}>
-          <h1 className={style.rootTitle}>Каталог ❤️</h1>
-          <Sort sortTitle={sortType} onChangeSort={(i) => setSortType(i)} />
+    <section id="section1">
+      <div className={style.root}>
+        <div className={style.container}>
+          <div className={style.rootCatalogWrapper}>
+            <h1 className={style.rootTitle}>Каталог ❤️</h1>
+            <Sort sortTitle={sortType} onChangeSort={(i) => setSortType(i)} />
+          </div>
+          <div className={style.rootCatalogList}>
+            {isLoading ? ShortSkeleton : ShortItemBlock}
+          </div>
+          <Pagination onChangePage={(number) => setCurrentPage(number)} />
         </div>
-        <div className={style.rootCatalogList}>
-          {isLoading ? ShortSkeleton : ShortItemBlock}
-        </div>
-        <Pagination onChangePage={(number) => setCurrentPage(number)} />
       </div>
-    </div>
+    </section>
   );
 };
 
