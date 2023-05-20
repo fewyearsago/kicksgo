@@ -1,6 +1,7 @@
 @import url('../../assets/fonts/index.scss');
 
 .root {
+  position: relative;
   min-height: 450px;
   cursor: pointer;
   transition: all 0.3s;
@@ -90,22 +91,17 @@
     width: 280px;
     flex-wrap: wrap;
     button {
-      border: none;
       padding: 5px 10px;
       border-radius: 20px;
       transition: all 0.3s;
       font-size: 11px;
-      border: none;
+      border: 2px solid transparent;
       cursor: pointer;
     }
     &Btn {
-      &Active {
-        background-color: #323232;
-        color: #fff;
-      }
+      color: #240f0f;
       &:hover {
-        color: #240f0f;
-        background-color: rgb(221, 221, 221);
+        border-color: #1c1c1c;
       }
     }
   }

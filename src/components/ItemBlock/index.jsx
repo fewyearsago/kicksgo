@@ -5,7 +5,6 @@ import { addItem, toggleFavorite } from '../../redux/slices/favoriteSlice';
 import style from './index.module.scss';
 
 const ItemBlock = ({ imgUrl, id, price, title, sizes }) => {
-  const [activeIndex, setActiveIndex] = React.useState(0);
   const favorites = useSelector((state) => state.favorite.isFavorite);
   const isFavorite = favorites.includes(id);
   const dispatch = useDispatch();
@@ -21,9 +20,6 @@ const ItemBlock = ({ imgUrl, id, price, title, sizes }) => {
     dispatch(toggleFavorite(id));
   };
   const list = [...sizes];
-  const onClickActiveIndex = (id) => {
-    setActiveIndex(id);
-  };
   return (
     <div className={style.root}>
       <div className={style.rootItem}>
@@ -56,12 +52,7 @@ const ItemBlock = ({ imgUrl, id, price, title, sizes }) => {
       </div>
       <div className={style.rootSizes}>
         {list.map((e, i) => (
-          <button
-            key={i}
-            onClick={() => onClickActiveIndex(i)}
-            className={
-              activeIndex === i ? style.rootSizesBtnActive : style.rootSizesBtn
-            }>
+          <button key={i} className={style.rootSizesBtn}>
             {e}
           </button>
         ))}
