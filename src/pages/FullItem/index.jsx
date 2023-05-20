@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import style from './index.module.scss';
 
 const FullItem = () => {
@@ -45,6 +45,9 @@ const FullItem = () => {
           ))}
         </ul>
         <button className={style.rootCart}>Добавить в корзину.</button>
+        <Link className={style.rootLink} to="/">
+          <button className={style.rootBackBtn}>Назад.</button>
+        </Link>
       </div>
     </div>
   );
