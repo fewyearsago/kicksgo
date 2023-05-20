@@ -19,15 +19,17 @@
       content: '';
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
       bottom: 0;
+      right: 0;
+      left: 0;
     }
   }
   &Price {
     font-size: 16px;
   }
   &Btn {
+    position: relative;
+    z-index: 1000001;
     border: none;
     background-color: transparent;
     padding: 5px 15px;

@@ -12,9 +12,14 @@ const Favorites = () => {
         <h1 className={style.rootTitle}>Избранное:</h1>
         {favs.length == 0 ? (
           <div className={style.rootBox}>
-            Пока нет товаров..
+            <h1 className={style.rootText}>Пока нет товаров..</h1>
+            <img
+              className={style.rootImg}
+              src="https://images.unsplash.com/photo-1505650462443-863da97fc640?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+              alt=""
+            />
             <Link to="/">
-              <button>Вернуться назад..</button>
+              <button className={style.rootBackBtn}>Вернуться назад..</button>
             </Link>
           </div>
         ) : (
