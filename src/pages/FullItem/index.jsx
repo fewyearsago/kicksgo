@@ -6,6 +6,10 @@ import style from './index.module.scss';
 const FullItem = () => {
   const { id } = useParams();
   const [item, setItem] = React.useState([]);
+  const [category, setCategory] = React.useState(0);
+  const onClickSetCategory = (id) => {
+    setCategory(id);
+  };
   React.useEffect(() => {
     try {
       const getItem = async () => {
@@ -32,7 +36,10 @@ const FullItem = () => {
         <p className={style.rootText}>{item.price}$</p>
         <ul className={style.rootList}>
           {item.sizes.map((e, i) => (
-            <button className={style.rootBtn} key={i}>
+            <button
+              onClick={() => onClickSetCategory(i)}
+              className={category === i ? style.rootBtnActive : style.rootBtn}
+              key={i}>
               {e}
             </button>
           ))}
