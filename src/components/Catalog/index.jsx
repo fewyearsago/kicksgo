@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React from 'react';
-import { Navigate } from 'react-router-dom';
 import ItemBlock from '../ItemBlock';
 import Pagination from '../Pagination';
 import Skeleton from '../Skeleton';

@@ -1,0 +1,55 @@
+@import url('../../assets/fonts/index.scss');
+
+.root {
+  padding-top: 200px;
+  display: flex;
+  justify-content: center;
+  &ImgItem {
+    width: 400px;
+  }
+  &Title {
+    font-family: 'Gugi';
+    margin: 5px;
+    font-size: 24px;
+  }
+  &Text {
+    font-family: 'Space Grotesk';
+    margin: 20px 5px;
+    font-size: 30px;
+  }
+  &Btn {
+    font-family: 'Space Grotesk';
+    border: 2px solid #8860ff;
+    border-radius: 10px;
+    color: #8860ff;
+    background-color: transparent;
+    font-size: 16px;
+    margin: 5px;
+    padding: 7px 20px;
+    cursor: pointer;
+    &:hover {
+      border-color: #a2a2a2;
+    }
+  }
+  &Info {
+    max-width: 400px;
+  }
+  &Cart {
+    background-color: #855cff;
+    font-family: 'Nunito';
+    font-size: 16px;
+    border: none;
+    margin: 20px 5px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    color: #fff;
+  }
+}
+
+.loading {
+  position: absolute;
+  top: 20%;
+  font-size: 20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

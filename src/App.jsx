@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Favorites from './pages/Favorites';
 import { Routes, Route } from 'react-router-dom';
 import PageNotFound from './pages/PageNotFound';
+import FullItem from './pages/FullItem';
 import './index.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/sneakers/:id" element={<FullItem />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
