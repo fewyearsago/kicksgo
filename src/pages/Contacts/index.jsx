@@ -12,7 +12,7 @@ const Contacts = () => {
           </div>
           <div className={style.rootContactsItem}>
             <h1>Email</h1>
-            <a href="#">info@kicksgo.ru</a>
+            <a href="mailto:info@kicksgo.ru">info@kicksgo.ru</a>
           </div>
           <div className={style.rootContactsItem}>
             <h1>Время работы</h1>
