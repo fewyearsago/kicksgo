@@ -1,0 +1,39 @@
+@import url('../../assets/fonts/index.scss');
+.root {
+  &Contacts {
+    &Inner {
+      width: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+    }
+    &Item {
+      margin: 30px 0;
+      h1 {
+        font-size: 32px;
+        margin-bottom: 30px;
+        font-family: 'Exo 2', sans-serif;
+      }
+      p {
+        font-size: 20px;
+        font-family: 'Nunito';
+      }
+      a {
+        text-decoration: none;
+        font-family: 'Exo 2', sans-serif;
+        color: #351497;
+        font-size: 26px;
+      }
+    }
+  }
+}
+
+.container {
+  padding: 200px 0 0 10px;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

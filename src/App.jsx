@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import PageNotFound from './pages/PageNotFound';
 import FullItem from './pages/FullItem';
 import FAQ from './pages/FAQ';
+import Contacts from './pages/Contacts';
 import About from './pages/About';
 import './index.css';
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contacts" element={<Contacts />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/sneakers/:id" element={<FullItem />} />
         <Route path="*" element={<PageNotFound />} />
