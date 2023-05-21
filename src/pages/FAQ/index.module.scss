@@ -1,10 +1,57 @@
+@import url('../../assets/fonts/index.scss');
+
 .root {
   font-size: 20px;
+  font-family: 'Exo 2', sans-serif;
+  &BoxTitleActive {
+    color: #8860ff;
+    transition: all 0.25s;
+  }
+  &Content {
+    max-width: 800px;
+  }
+  &MainTitle {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  &Item {
+    margin-bottom: 5px;
+    padding: 20px 20px 10px 0;
+    border-bottom: 2px solid #000;
+    overflow: hidden;
+
+    &Title {
+      cursor: pointer;
+      margin: 15px 0;
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &Text {
+      max-height: 0;
+      line-height: 25px;
+      font-weight: 500;
+      overflow: hidden;
+      transition: all 0.5s;
+    }
+    &TextActive {
+      font-weight: 500;
+      line-height: 25px;
+      max-height: 300px;
+      transition: all 1s;
+    }
+    &AnswerText {
+      margin-bottom: 10px;
+    }
+  }
 }
 
 .container {
-  max-width: 1220px;
-  margin: 0 auto;
   padding: 200px 0 0 10px;
   min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

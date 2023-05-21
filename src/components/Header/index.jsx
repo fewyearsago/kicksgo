@@ -14,21 +14,16 @@ const Header = () => {
           </Link>
           <ul className={style.rootInnerMenu}>
             {list.map((obj, i) => (
-              <li className={style.rootInnerMenuItem} key={i}>
-                {obj}
-              </li>
+              <Link className={style.rootInnerMenuItem} key={i} to={obj}>
+                <li key={i}>{obj}</li>
+              </Link>
             ))}
           </ul>
           <div className={style.rootInnerInfo}>
             <div className={style.rootInnerInfoFav}>
-              {favs.length > 0 && (
-                <span className={style.rootInnerInfoFavFull}></span>
-              )}
+              {favs.length > 0 && <span className={style.rootInnerInfoFavFull}></span>}
               <Link to="/favorites">
-                <svg
-                  height="20px"
-                  viewBox="0 0 32 32"
-                  xmlns="http://www.w3.org/2000/svg">
+                <svg height="20px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <style></style>
                   </defs>

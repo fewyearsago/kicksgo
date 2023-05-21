@@ -28,6 +28,8 @@
     &Menu {
       display: flex;
       &Item {
+        text-decoration: none;
+        color: inherit;
         cursor: pointer;
         position: relative;
         padding: 0 5px;
