@@ -2,7 +2,7 @@
 
 .root {
   text-align: center;
-  padding-top: 200px;
+
   font-family: 'Space Grotesk';
 
   &Title {
@@ -17,4 +17,10 @@
     margin-top: 20px;
     border-radius: 20px;
   }
+}
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 200px 0 0 10px;
+  min-height: 100%;
 }

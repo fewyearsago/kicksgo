@@ -14,7 +14,7 @@ const Favorites = () => {
   };
   return (
     <div className={style.root}>
-      <div className={style.wrapper}>
+      <div className={style.container}>
         <h1 className={style.rootTitle}>Избранное:</h1>
         {favs.length == 0 ? (
           <div className={style.rootBox}>
