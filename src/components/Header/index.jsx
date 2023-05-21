@@ -1,9 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import '../../index.css';
 import style from './index.module.scss';
 const Header = () => {
-  const list = ['FAQ', 'Отзывы', 'Контакты'];
+  const list = [
+    { name: 'FAQ', href: '/FAQ' },
+    { name: 'Отзывы', href: '/reviews' },
+    { name: 'Контакты', href: '/contacts' },
+  ];
   const favs = useSelector((state) => state.favorite.items);
   return (
     <div className={style.root}>
@@ -14,9 +19,9 @@ const Header = () => {
           </Link>
           <ul className={style.rootInnerMenu}>
             {list.map((obj, i) => (
-              <Link className={style.rootInnerMenuItem} key={i} to={obj}>
-                <li key={i}>{obj}</li>
-              </Link>
+              <NavLink className={style.rootInnerMenuItem} key={i} to={obj.href}>
+                <li key={i}>{obj.name}</li>
+              </NavLink>
             ))}
           </ul>
           <div className={style.rootInnerInfo}>

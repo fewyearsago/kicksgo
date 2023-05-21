@@ -33,6 +33,7 @@
         cursor: pointer;
         position: relative;
         padding: 0 5px;
+
         &::after {
           content: '';
           position: absolute;
@@ -40,11 +41,11 @@
           height: 3px;
           left: 0;
           bottom: -10px;
-          background-color: #80471c;
+          background-color: #ff269d;
           transition: all 0.5s;
         }
         &:hover {
-          color: #80471c;
+          color: #ff269d;
           &::after {
             width: 100%;
           }
