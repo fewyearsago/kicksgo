@@ -1,12 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
-import '../../index.css';
 import style from './index.module.scss';
+import '../../index.css';
 const Header = () => {
   const list = [
     { name: 'FAQ', href: '/FAQ' },
-    { name: 'Отзывы', href: '/reviews' },
+    { name: 'О нас', href: '/about' },
     { name: 'Контакты', href: '/contacts' },
   ];
   const favs = useSelector((state) => state.favorite.items);

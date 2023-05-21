@@ -1,0 +1,51 @@
+@import url('../../assets/fonts/index.scss');
+.root {
+  height: 100vh;
+  &About {
+    max-width: 850px;
+    text-align: center;
+    &Title {
+      font-size: 34px;
+      font-weight: 700;
+      font-family: 'Nunito';
+      margin-bottom: 37px;
+      position: relative;
+      z-index: 100;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    &Text {
+      font-size: 22px;
+      font-family: 'Exo 2', sans-serif;
+      line-height: 27px;
+      position: relative;
+      z-index: 100;
+
+      margin-bottom: 20px;
+      font-weight: 400;
+      color: #fff;
+      span {
+        text-decoration: underline;
+      }
+    }
+    img {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      object-fit: cover;
+      filter: brightness(40%);
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.container {
+  display: flex;
+
+  justify-content: center;
+  padding: 300px 0 0 10px;
+  min-height: 100%;
+}
