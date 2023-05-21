@@ -9,7 +9,8 @@ const Favorites = () => {
   const favs = useSelector((state) => state.favorite.items);
   const dispatch = useDispatch();
   const onClickClearFavs = () => {
-    dispatch(clearItems());
+    if (window.confirm('Действительно очистить список?'))
+      dispatch(clearItems());
   };
   return (
     <div className={style.root}>
