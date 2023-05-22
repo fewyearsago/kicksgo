@@ -18,10 +18,12 @@ const About = () => {
             тщательно подбираем и предлагаем вам только самые актуальные и модные модели, от ведущих
             мировых брендов и дизайнеров.
           </p>
-          <img
-            src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
-            alt=""
-          />
+          <div className={style.rootImgBox}>
+            <img
+              src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </div>

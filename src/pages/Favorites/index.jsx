@@ -9,13 +9,11 @@ const Favorites = () => {
   const favs = useSelector((state) => state.favorite.items);
   const dispatch = useDispatch();
   const onClickClearFavs = () => {
-    if (window.confirm('Действительно очистить список?'))
-      dispatch(clearItems());
+    if (window.confirm('Действительно очистить список?')) dispatch(clearItems());
   };
   return (
     <div className={style.root}>
       <div className={style.container}>
-        <h1 className={style.rootTitle}>Избранное:</h1>
         {favs.length == 0 ? (
           <div className={style.rootBox}>
             <h1 className={style.rootText}>Пока нет товаров..</h1>
@@ -30,6 +28,7 @@ const Favorites = () => {
           </div>
         ) : (
           <>
+            <h1 className={style.rootTitle}>Избранное:</h1>
             <div className={style.rootInner}>
               {favs.map((e, i) => (
                 <FavItemBlock
