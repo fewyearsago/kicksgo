@@ -8,6 +8,7 @@ import FullItem from './pages/FullItem';
 import FAQ from './pages/FAQ';
 import Contacts from './pages/Contacts';
 import About from './pages/About';
+import Cart from './pages/Cart';
 import './index.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/sneakers/:id" element={<FullItem />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

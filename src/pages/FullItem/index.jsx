@@ -1,21 +1,23 @@
 import axios from 'axios';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import { toAddCartItem } from '../../redux/slices/cartSlice';
 import style from './index.module.scss';
 
 const FullItem = () => {
   const { id } = useParams();
   const [item, setItem] = React.useState([]);
   const [category, setCategory] = React.useState(0);
+  const dispatch = useDispatch();
   const onClickSetCategory = (id) => {
     setCategory(id);
   };
+
   React.useEffect(() => {
     try {
       const getItem = async () => {
-        const { data } = await axios.get(
-          'https://644189e3792fe886a8aa1467.mockapi.io/items/' + id,
-        );
+        const { data } = await axios.get('https://644189e3792fe886a8aa1467.mockapi.io/items/' + id);
         setItem(data);
       };
       getItem();
@@ -23,9 +25,18 @@ const FullItem = () => {
       alert('Произошла ошибка. Повторите попытку позже.');
     }
   }, []);
+  const KicksItem = {
+    title: item.title,
+    imgUrl: item.imgUrl,
+    id: item.id,
+    price: item.price,
+    sizes: item.sizes,
+    size: category,
+  };
   if (item.length == 0) {
     return <h1 className={style.loading}>Идет загрузка...</h1>;
   }
+
   return (
     <div className={style.root}>
       <div className={style.rootInner}>
@@ -45,7 +56,9 @@ const FullItem = () => {
               </button>
             ))}
           </ul>
-          <button className={style.rootCart}>Добавить в корзину.</button>
+          <button onClick={() => dispatch(toAddCartItem(KicksItem))} className={style.rootCart}>
+            Добавить в корзину.
+          </button>
           <Link className={style.rootLink} to="/">
             <button className={style.rootBackBtn}>
               <svg
