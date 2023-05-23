@@ -8,10 +8,11 @@ import style from './index.module.scss';
 const Cart = () => {
   const dispatch = useDispatch();
   const onClickClearItems = () => {
-    if (window.confirm('Действительно очистить корзину?')) dispatch(toClearCartItem());
+    if (window.confirm('Действительно очистить корзину?'))
+      dispatch(toClearCartItem());
   };
-  const items = useSelector((state) => state.cartSlice.items);
-  const totalPrice = useSelector((state) => state.cartSlice.totalPrice);
+  const { items, totalPrice } = useSelector((state) => state.cartSlice);
+
   if (totalPrice === 0) {
     return <CartEmpty />;
   }

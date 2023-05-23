@@ -74,6 +74,9 @@
     &:hover {
       background-color: #8c66fe;
     }
+    &:active {
+      transform: translateY(-3px);
+    }
   }
 }
 

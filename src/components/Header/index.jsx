@@ -10,6 +10,8 @@ const Header = () => {
     { name: 'Контакты', href: '/contacts' },
   ];
   const favs = useSelector((state) => state.favorite.items);
+  const items = useSelector((state) => state.cartSlice.items);
+  const totalCount = items.reduce((sum, item) => sum + item.count, 0);
   return (
     <div className={style.root}>
       <div className={style.container}>
@@ -19,16 +21,24 @@ const Header = () => {
           </Link>
           <ul className={style.rootInnerMenu}>
             {list.map((obj, i) => (
-              <NavLink className={style.rootInnerMenuItem} key={i} to={obj.href}>
+              <NavLink
+                className={style.rootInnerMenuItem}
+                key={i}
+                to={obj.href}>
                 <li key={i}>{obj.name}</li>
               </NavLink>
             ))}
           </ul>
           <div className={style.rootInnerInfo}>
             <div className={style.rootInnerInfoFav}>
-              {favs.length > 0 && <span className={style.rootInnerInfoFavFull}></span>}
+              {favs.length > 0 && (
+                <span className={style.rootInnerInfoFavFull}></span>
+              )}
               <Link to="/favorites">
-                <svg height="20px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  height="20px"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <style></style>
                   </defs>
@@ -74,7 +84,9 @@ const Header = () => {
                   <circle cx="34" cy="19" r="2" />
                   <circle cx="16" cy="19" r="2" />
                 </svg>
-                <span className={style.rootInnerInfoCartCount}>1</span>
+                <span className={style.rootInnerInfoCartCount}>
+                  {totalCount}
+                </span>
               </div>
             </Link>
           </div>

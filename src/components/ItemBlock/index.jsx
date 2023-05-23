@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { toAddCartItem } from '../../redux/slices/cartSlice';
 import { addItem, toggleFavorite } from '../../redux/slices/favoriteSlice';
 import style from './index.module.scss';
 
@@ -18,6 +19,18 @@ const ItemBlock = ({ imgUrl, id, price, title, sizes }) => {
     };
     dispatch(addItem(item));
     dispatch(toggleFavorite(id));
+  };
+
+  const onClickAddSizeItem = (i) => {
+    const item = {
+      id,
+      size: i,
+      title,
+      imgUrl,
+      sizes,
+      price,
+    };
+    dispatch(toAddCartItem(item));
   };
   const list = [...sizes];
   return (
@@ -52,7 +65,10 @@ const ItemBlock = ({ imgUrl, id, price, title, sizes }) => {
       </div>
       <div className={style.rootSizes}>
         {list.map((e, i) => (
-          <button key={i} className={style.rootSizesBtn}>
+          <button
+            onClick={() => onClickAddSizeItem(i)}
+            key={i}
+            className={style.rootSizesBtn}>
             {e}
           </button>
         ))}

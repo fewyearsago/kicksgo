@@ -1,6 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { toRemoveCartItem, toMinusCartItem, toAddCartItem } from '../../redux/slices/cartSlice';
+import {
+  toRemoveCartItem,
+  toMinusCartItem,
+  toAddCartItem,
+} from '../../redux/slices/cartSlice';
 import style from './index.module.scss';
 
 const CartItem = ({ id, title, price, imgUrl, size, sizes, count }) => {
@@ -11,7 +15,8 @@ const CartItem = ({ id, title, price, imgUrl, size, sizes, count }) => {
     size,
   };
   const onClickRemoveCartItem = () => {
-    if (window.confirm('Действительно удалить товар?')) dispatch(toRemoveCartItem(itemArgs));
+    if (window.confirm('Действительно удалить товар?'))
+      dispatch(toRemoveCartItem(itemArgs));
   };
   const onClickMinusCartItem = () => {
     dispatch(toMinusCartItem(itemArgs));
@@ -29,7 +34,9 @@ const CartItem = ({ id, title, price, imgUrl, size, sizes, count }) => {
       <div className={style.rootInfo}>
         <p>{price}$</p>
         <div className={style.rootInfoBtns}>
-          <button onClick={onClickMinusCartItem}>-</button>
+          <button disabled={count === 1} onClick={onClickMinusCartItem}>
+            -
+          </button>
           <p>{count}</p>
           <button onClick={onClickPlusCartItem}>+</button>
         </div>
