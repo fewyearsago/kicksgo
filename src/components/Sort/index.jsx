@@ -1,12 +1,16 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSortType } from '../../redux/slices/filtersSlice';
 import style from './index.module.scss';
 
-const Sort = ({ sortTitle, onChangeSort }) => {
+const Sort = () => {
+  const dispatch = useDispatch();
   const [open, setOpen] = React.useState(false);
+  const sortType = useSelector((state) => state.filter.sortType);
   const sortRef = React.useRef();
   const onClickListItem = (id) => {
+    dispatch(setSortType(id));
     setOpen(false);
-    onChangeSort(id);
   };
   const list = [
     { name: 'Популярности', sortProperty: '-rating' },
@@ -28,11 +32,15 @@ const Sort = ({ sortTitle, onChangeSort }) => {
   return (
     <div ref={sortRef} className={style.rootSort}>
       <div className={style.rootSortMain}>
-        <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg">
           <path d="M7 20h2V8h3L8 4 4 8h3zm13-4h-3V4h-2v12h-3l4 4z" />
         </svg>
         <span className={style.rootSortTitle} onClick={() => setOpen(!open)}>
-          {sortTitle.name}
+          {sortType.name}
         </span>
       </div>
 
@@ -43,7 +51,7 @@ const Sort = ({ sortTitle, onChangeSort }) => {
               <li
                 key={i}
                 className={
-                  e.sortProperty === sortTitle.sortProperty
+                  e.sortProperty === sortType.sortProperty
                     ? style.rootSortItemActive
                     : style.rootSortItem
                 }

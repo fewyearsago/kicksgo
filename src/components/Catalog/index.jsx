@@ -1,5 +1,11 @@
 import axios from 'axios';
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  setCurrentPage,
+  setItems,
+  setSortType,
+} from '../../redux/slices/filtersSlice';
 import ItemBlock from '../ItemBlock';
 import Pagination from '../Pagination';
 import Skeleton from '../Skeleton';
@@ -7,14 +13,9 @@ import Sort from '../Sort';
 import style from './index.module.scss';
 
 const Catalog = () => {
-  const [items, setItems] = React.useState([]);
-  const [sortType, setSortType] = React.useState({
-    name: 'Популярности',
-    sortProperty: '-rating',
-  });
+  const dispatch = useDispatch();
+  const { items, currentPage, sortType } = useSelector((state) => state.filter);
   const [isLoading, setIsLoading] = React.useState(true);
-  const [currentPage, setCurrentPage] = React.useState(1);
-
   const ShortSkeleton = [...new Array(4)].map((_, i) => <Skeleton key={i} />);
   const ShortItemBlock = items.map((e, i) => (
     <ItemBlock
@@ -36,7 +37,7 @@ const Catalog = () => {
         const { data } = await axios.get(
           `https://644189e3792fe886a8aa1467.mockapi.io/items?page=${currentPage}&limit=4&sortBy=${ShortSortBy}&order=${ShortOrder}`,
         );
-        setItems(data);
+        dispatch(setItems([...data]));
       } catch {
         alert('Произошла ошибка. Обновите страницу позже.');
       } finally {
@@ -53,10 +54,14 @@ const Catalog = () => {
         <div className={style.container}>
           <div className={style.rootCatalogWrapper}>
             <h1 className={style.rootTitle}>Каталог</h1>
-            <Sort sortTitle={sortType} onChangeSort={(i) => setSortType(i)} />
+            <Sort />
           </div>
-          <div className={style.rootCatalogList}>{isLoading ? ShortSkeleton : ShortItemBlock}</div>
-          <Pagination onChangePage={(number) => setCurrentPage(number)} />
+          <div className={style.rootCatalogList}>
+            {isLoading ? ShortSkeleton : ShortItemBlock}
+          </div>
+          <Pagination
+            onChangePage={(number) => dispatch(setCurrentPage(number))}
+          />
         </div>
       </div>
     </section>
