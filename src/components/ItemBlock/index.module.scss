@@ -106,11 +106,32 @@
     }
     &Btn {
       color: #240f0f;
+      position: relative;
       &:hover {
         border-color: #1c1c1c;
       }
       &:active {
         transform: translateY(-2px);
+      }
+      &::before {
+        visibility: hidden;
+        opacity: 0;
+        content: 'В корзину';
+        position: absolute;
+        top: -25px;
+        width: 65px;
+        height: auto;
+        font-family: 'Nunito';
+        transition: all 0.4s;
+        font-size: 12px;
+        border-radius: 4px;
+        padding: 2px 2px;
+        left: 50%;
+        line-height: 14px;
+        transform: translateX(-50%);
+        color: white;
+        z-index: 1000;
+        background-color: rgb(103, 42, 42);
       }
     }
   }
@@ -118,4 +139,9 @@
     text-decoration: none;
     color: inherit;
   }
+}
+
+.rootSizesBtn:hover::before {
+  visibility: visible;
+  opacity: 1;
 }
