@@ -1,8 +1,27 @@
 .root {
-  img {
-    width: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  &Info {
+    text-align: center;
+
+    &Btns {
+      margin-top: 10px;
+      display: flex;
+      column-gap: 10px;
+    }
   }
-  &Btn {
+  img {
+    width: 150px;
+  }
+  h1 {
+    font-size: 20px;
+    width: 300px;
+    margin-bottom: 5px;
+  }
+
+  button {
     border: none;
     cursor: pointer;
     background-color: transparent;

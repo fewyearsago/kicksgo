@@ -1,25 +1,39 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { toRemoveCartItem } from '../../redux/slices/cartSlice';
+import { toRemoveCartItem, toMinusCartItem, toAddCartItem } from '../../redux/slices/cartSlice';
 import style from './index.module.scss';
 
 const CartItem = ({ id, title, price, imgUrl, size, sizes, count }) => {
   const itemSize = sizes[size];
   const dispatch = useDispatch();
-  const removeItem = {
+  const itemArgs = {
     id,
     size,
   };
   const onClickRemoveCartItem = () => {
-    if (window.confirm('Действительно удалить товар?')) dispatch(toRemoveCartItem(removeItem));
+    if (window.confirm('Действительно удалить товар?')) dispatch(toRemoveCartItem(itemArgs));
+  };
+  const onClickMinusCartItem = () => {
+    dispatch(toMinusCartItem(itemArgs));
+  };
+  const onClickPlusCartItem = () => {
+    dispatch(toAddCartItem(itemArgs));
   };
   return (
     <div className={style.root}>
       <img src={imgUrl} alt="" />
-      <h1>{title}</h1>
-      <p>{price}$</p>
-      <p>шт:{count}</p>
-      <span>Размер:{itemSize}</span>
+      <div className={style.rootText}>
+        <h1>{title}</h1>
+        <span>Размер:{itemSize}</span>
+      </div>
+      <div className={style.rootInfo}>
+        <p>{price}$</p>
+        <div className={style.rootInfoBtns}>
+          <button onClick={onClickMinusCartItem}>-</button>
+          <p>{count}</p>
+          <button onClick={onClickPlusCartItem}>+</button>
+        </div>
+      </div>
       <button className={style.rootBtn} onClick={onClickRemoveCartItem}>
         <svg
           width="40px"
