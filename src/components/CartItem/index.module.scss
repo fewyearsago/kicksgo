@@ -1,15 +1,28 @@
+@import url('../../assets/fonts/index.scss');
 .root {
   display: flex;
+  font-family: 'Mulish', sans-serif;
   justify-content: space-around;
   align-items: center;
-  padding: 20px;
+  padding: 5px;
+  border-bottom: 1px solid #c3c3c3;
+  &Text {
+    h1 {
+      margin-bottom: 10px;
+    }
+  }
   &Info {
     text-align: center;
 
     &Btns {
       margin-top: 10px;
       display: flex;
+      font-size: 20px;
+      line-height: 30px;
       column-gap: 10px;
+      button {
+        font-size: 20px;
+      }
     }
   }
   img {

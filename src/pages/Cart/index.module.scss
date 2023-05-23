@@ -1,12 +1,50 @@
+@import url('../../assets/fonts/index.scss');
 .root {
+  padding: 0 0 100px 0;
   &Cart {
+    &Sum {
+      font-size: 20px;
+
+      font-family: 'Nunito';
+    }
     &Main {
-      padding: 20px;
+      padding: 10px;
     }
     &Header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 30px;
+      font-family: 'Nunito';
+      h1 {
+        font-size: 22px;
+      }
+      button {
+        border: none;
+        font-size: 17px;
+        cursor: pointer;
+        background-color: transparent;
+      }
+    }
+    &Footer {
+      padding-top: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      button {
+        border: 2px solid #1f1f1f;
+        background-color: #1f1f1f;
+        color: #fff;
+        cursor: pointer;
+        font-family: 'Nunito';
+        transition: all 0.3s;
+        font-size: 20px;
+        padding: 17px 45px;
+        &:hover {
+          background-color: #fff;
+          color: #1f1f1f;
+        }
+      }
     }
   }
 }
@@ -14,6 +52,6 @@
 .container {
   max-width: 1020px;
   margin: 0 auto;
-  padding: 200px 0 0 10px;
+  padding: 150px 0 0 10px;
   min-height: 100%;
 }

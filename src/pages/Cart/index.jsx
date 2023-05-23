@@ -12,6 +12,9 @@ const Cart = () => {
   };
   const items = useSelector((state) => state.cartSlice.items);
   const totalPrice = useSelector((state) => state.cartSlice.totalPrice);
+  if (totalPrice === 0) {
+    return <CartEmpty />;
+  }
   return (
     <div className={style.root}>
       <div className={style.container}>
@@ -34,7 +37,8 @@ const Cart = () => {
             ))}
           </div>
           <div className={style.rootCartFooter}>
-            <div className={style.rootCartSum}>Сумма заказа: {totalPrice}$.</div>
+            <div className={style.rootCartSum}>Сумма заказа: {totalPrice}$</div>
+            <button>Оплатить сейчас</button>
           </div>
         </div>
       </div>
