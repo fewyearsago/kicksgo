@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import FavItemBlock from '../../components/FavItemBlock';
 import { clearItems } from '../../redux/slices/favoriteSlice';
 import style from './index.module.scss';
+import favsImg from '../../../public/favs.png';
 
 const Favorites = () => {
   const favs = useSelector((state) => state.favorite.items);
@@ -17,11 +18,7 @@ const Favorites = () => {
         {favs.length == 0 ? (
           <div className={style.rootBox}>
             <h1 className={style.rootText}>Пока нет товаров..</h1>
-            <img
-              className={style.rootImg}
-              src="https://images.unsplash.com/photo-1505650462443-863da97fc640?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-              alt=""
-            />
+            <img className={style.rootImg} src={favsImg} alt="" />
             <Link to="/">
               <button className={style.rootBackBtn}>Вернуться назад..</button>
             </Link>

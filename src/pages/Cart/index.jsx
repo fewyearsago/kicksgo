@@ -8,8 +8,7 @@ import style from './index.module.scss';
 const Cart = () => {
   const dispatch = useDispatch();
   const onClickClearItems = () => {
-    if (window.confirm('Действительно очистить корзину?'))
-      dispatch(toClearCartItem());
+    if (window.confirm('Действительно очистить корзину?')) dispatch(toClearCartItem());
   };
   const { items, totalPrice } = useSelector((state) => state.cartSlice);
 
@@ -27,6 +26,7 @@ const Cart = () => {
           <div className={style.rootCartContent}>
             {items.map((e, i) => (
               <CartItem
+                key={i}
                 id={e.id}
                 count={e.count}
                 sizes={e.sizes}

@@ -1,11 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  setCurrentPage,
-  setItems,
-  setSortType,
-} from '../../redux/slices/filtersSlice';
+import { setCurrentPage, setItems } from '../../redux/slices/filtersSlice';
 import ItemBlock from '../ItemBlock';
 import Pagination from '../Pagination';
 import Skeleton from '../Skeleton';
@@ -16,6 +12,7 @@ const Catalog = () => {
   const dispatch = useDispatch();
   const { items, currentPage, sortType } = useSelector((state) => state.filter);
   const [isLoading, setIsLoading] = React.useState(true);
+
   const ShortSkeleton = [...new Array(4)].map((_, i) => <Skeleton key={i} />);
   const ShortItemBlock = items.map((e, i) => (
     <ItemBlock
@@ -56,12 +53,8 @@ const Catalog = () => {
             <h1 className={style.rootTitle}>Каталог</h1>
             <Sort />
           </div>
-          <div className={style.rootCatalogList}>
-            {isLoading ? ShortSkeleton : ShortItemBlock}
-          </div>
-          <Pagination
-            onChangePage={(number) => dispatch(setCurrentPage(number))}
-          />
+          <div className={style.rootCatalogList}>{isLoading ? ShortSkeleton : ShortItemBlock}</div>
+          <Pagination onChangePage={(number) => dispatch(setCurrentPage(number))} />
         </div>
       </div>
     </section>
