@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
@@ -16,14 +16,70 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contacts" element={<Contacts />} />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/sneakers/:id" element={<FullItem />} />
-        <Route path="*" element={<PageNotFound />} />
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={<div>Идёт загрузка...</div>}>
+              <Home />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/faq"
+          element={
+            <Suspense fallback={<div>Идёт загрузка...</div>}>
+              <FAQ />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <Suspense fallback={<div>Идёт загрузка...</div>}>
+              <About />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <Suspense fallback={<div>Идёт загрузка...</div>}>
+              <Contacts />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/favorites"
+          element={
+            <Suspense fallback={<div>Идёт загрузка...</div>}>
+              <Favorites />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <Suspense fallback={<div>Идёт загрузка...</div>}>
+              <Cart />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/sneakers/:id"
+          element={
+            <Suspense fallback={<div>Идёт загрузка...</div>}>
+              <FullItem />
+            </Suspense>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <Suspense fallback={<div>Идёт загрузка...</div>}>
+              <PageNotFound />
+            </Suspense>
+          }
+        />
       </Routes>
     </>
   );
