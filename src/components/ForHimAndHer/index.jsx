@@ -13,7 +13,7 @@ const ForHimAndHer = () => {
             <Link
               className={style.rootLink}
               activeClass="active"
-              to="section1"
+              to="section"
               spy={true}
               smooth={true}
               offset={-70}
@@ -26,7 +26,7 @@ const ForHimAndHer = () => {
             <Link
               className={style.rootLink}
               activeClass="active"
-              to="section1"
+              to="section"
               spy={true}
               smooth={true}
               offset={-70}

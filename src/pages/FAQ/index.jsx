@@ -37,7 +37,7 @@ const FAQ = () => {
         <div className={style.rootContent}>
           <h1 className={style.rootMainTitle}>FAQ</h1>
           {list.map((e, i) => (
-            <div className={style.rootItem}>
+            <div key={i} className={style.rootItem}>
               <div onClick={() => onClickMenu(i)} className={style.rootItemTitle}>
                 <h1 className={selected === i ? style.rootBoxTitleActive : style.rootBoxTitle}>
                   {e.question}

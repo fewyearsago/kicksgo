@@ -13,12 +13,84 @@
   position: fixed;
   z-index: 999999;
   width: 100%;
+  @media (max-width: 618px) {
+    .rootInnerMenu {
+      display: none;
+    }
+    .open {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      bottom: 0;
+      background-color: #ffffff;
+      text-align: center;
+      padding-top: 140px;
+      a {
+        margin: 0;
+        color: #000000;
+        padding: 20px;
+        display: block;
+        font-size: 30px;
+      }
+    }
+    .rootInnerLogo {
+      z-index: 5;
+    }
+    .rootInnerBtn {
+      display: block;
+    }
+    .rootInnerInfo {
+      margin: 0 30px 0 0;
+    }
+  }
   &Inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 0;
     font-family: 'Nunito', sans-serif;
+    &Btn {
+      display: none;
+      z-index: 6;
+      background-color: transparent;
+      margin-right: 40px;
+      border: none;
+      position: relative;
+      width: 30px;
+      cursor: pointer;
+      height: 25px;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background-color: #000000;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background-color: #000000;
+      }
+      &Burger {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #000000;
+        width: 30px;
+        height: 2px;
+      }
+    }
     &Logo {
       color: inherit;
       text-decoration: none;

@@ -46,7 +46,7 @@ const Catalog = () => {
   }, [currentPage, sortType]);
 
   return (
-    <section id="section1">
+    <section id="section">
       <div className={style.root}>
         <div className={style.container}>
           <div className={style.rootCatalogWrapper}>
