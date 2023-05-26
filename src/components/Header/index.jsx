@@ -13,6 +13,24 @@ const Header = () => {
   const favs = useSelector((state) => state.favorite.items);
   const items = useSelector((state) => state.cartSlice.items);
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+  const burgerRef = React.useRef();
+  const burgerBtn = React.useRef();
+  const handleClickBurger = () => {
+    burgerRef.current.classList.toggle(style.open);
+  };
+  React.useEffect(() => {
+    const clickHandler = (e) => {
+      if (!e.composedPath().includes(burgerBtn.current)) {
+        const classNames = burgerRef.current.className;
+        burgerRef.current.className = classNames.replace(style.open, '');
+      }
+    };
+    document.addEventListener('click', clickHandler);
+    return () => {
+      document.removeEventListener('click', clickHandler);
+    };
+  }, []);
+
   React.useEffect(() => {
     if (isMounted.current) {
       const json = JSON.stringify(items);
@@ -27,7 +45,10 @@ const Header = () => {
           <Link className={style.rootInnerLogo} to="/">
             KicksGo
           </Link>
-          <ul className={style.rootInnerMenu}>
+          <button ref={burgerBtn} onClick={handleClickBurger} className={style.rootInnerBtn}>
+            <span className={style.rootInnerBtnBurger}></span>
+          </button>
+          <ul ref={burgerRef} className={style.rootInnerMenu}>
             {list.map((obj, i) => (
               <NavLink className={style.rootInnerMenuItem} key={i} to={obj.href}>
                 <li key={i}>{obj.name}</li>
