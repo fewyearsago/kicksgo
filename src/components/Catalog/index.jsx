@@ -53,8 +53,12 @@ const Catalog = () => {
             <h1 className={style.rootTitle}>Каталог</h1>
             <Sort />
           </div>
-          <div className={style.rootCatalogList}>{isLoading ? ShortSkeleton : ShortItemBlock}</div>
-          <Pagination onChangePage={(number) => dispatch(setCurrentPage(number))} />
+          <div className={style.rootCatalogList}>
+            {isLoading ? ShortSkeleton : ShortItemBlock}
+          </div>
+          <Pagination
+            onChangePage={(number) => dispatch(setCurrentPage(number))}
+          />
         </div>
       </div>
     </section>

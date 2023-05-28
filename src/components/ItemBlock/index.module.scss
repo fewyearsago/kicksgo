@@ -9,10 +9,22 @@
   &Item {
     position: relative;
   }
+  @media (max-width: 1280px) {
+    max-width: 80%;
+  }
+  @media (max-width: 960px) {
+    max-width: 70%;
+    min-height: 100%;
+  }
+
   &Picture {
     box-shadow: 1px 3px 10px #d4d4d4;
     position: relative;
     height: 285px;
+    @media (max-width: 1280px) {
+      height: 100%;
+    }
+
     &Btns {
       transition: all 0.3s;
       position: relative;
@@ -64,10 +76,16 @@
     font-family: 'Mulish', sans-serif;
     width: 275px;
     padding: 5px;
+    @media (max-width: 860px) {
+      width: 100%;
+    }
     &Title {
       font-size: 22px;
       line-height: 28px;
       margin: 14px 0;
+      @media (max-width: 960px) {
+        font-size: 18px;
+      }
       &::before {
         content: '';
         position: absolute;
@@ -96,6 +114,13 @@
     column-gap: 5px;
     width: 280px;
     flex-wrap: wrap;
+    @media (max-width: 682px) {
+      gap: 0;
+      width: 100%;
+    }
+    @media (max-width: 425px) {
+      width: 50%;
+    }
     button {
       padding: 5px 10px;
       border-radius: 20px;

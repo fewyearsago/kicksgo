@@ -9,7 +9,10 @@
 
 .root {
   background-color: #fffbff;
-  padding: 100px 0 75px 0;
+  padding: 100px 20px 75px 20px;
+  @media (max-width: 960px) {
+    padding: 25px;
+  }
   &Catalog {
     &List {
       display: grid;
@@ -17,6 +20,19 @@
       grid-template-columns: repeat(4, 1fr);
       row-gap: 50px;
       place-items: center;
+
+      @media (max-width: 1280px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media (max-width: 960px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: 682px) {
+        gap: 0;
+      }
+      @media (max-width: 425px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
     }
     &Wrapper {
       margin: 0 0 50px 0;
