@@ -16,6 +16,9 @@
     max-width: 70%;
     min-height: 100%;
   }
+  @media ((min-width: 426px) and (max-width: 682px)) {
+    max-width: 90%;
+  }
 
   &Picture {
     box-shadow: 1px 3px 10px #d4d4d4;
@@ -41,6 +44,17 @@
       &Like {
         visibility: hidden;
         opacity: 0;
+        @media (max-width: 1280px) {
+          visibility: visible;
+          opacity: 0.15;
+        }
+        @media (max-width: 1280px) {
+          top: 15px;
+          right: 10px;
+          svg {
+            width: 22px;
+          }
+        }
         &Active {
           transition: all 0.3s;
           outline: none;
@@ -114,12 +128,16 @@
     column-gap: 5px;
     width: 280px;
     flex-wrap: wrap;
+    @media (max-width: 1280px) {
+      visibility: visible;
+      opacity: 1;
+    }
     @media (max-width: 682px) {
-      gap: 0;
+      row-gap: 5px;
       width: 100%;
     }
     @media (max-width: 425px) {
-      width: 50%;
+      width: 100%;
     }
     button {
       padding: 5px 10px;
@@ -132,6 +150,7 @@
     &Btn {
       color: #240f0f;
       position: relative;
+
       &:hover {
         border-color: #1c1c1c;
       }
