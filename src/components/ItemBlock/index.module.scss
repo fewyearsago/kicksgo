@@ -63,6 +63,13 @@
           background-color: transparent;
           top: 20px;
           position: absolute;
+          @media (max-width: 1280px) {
+            top: 15px;
+            right: 10px;
+            svg {
+              width: 22px;
+            }
+          }
           svg path {
             fill: rgb(185, 0, 0);
             transition: all 0.3s;
@@ -80,6 +87,9 @@
 
   &:hover {
     transform: scale(1.06);
+    @media (max-width: 1200px) {
+      transform: none;
+    }
     .rootSizes,
     .rootPictureBtnsLike {
       visibility: visible;
