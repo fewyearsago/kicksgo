@@ -12,7 +12,11 @@
 
 .root {
   display: flex;
-
+  @media (max-width: 425px) {
+    flex-wrap: wrap;
+    padding: 30px;
+    row-gap: 20px;
+  }
   &Link {
     cursor: pointer;
   }
@@ -32,6 +36,13 @@
     color: #fff;
     left: 50%;
     transform: translate(-50%, -50%);
+    @media (max-width: 1200px) {
+      font-size: 3.5vw;
+    }
+    @media (max-width: 426px) {
+      font-size: 20px;
+    }
+
     &::selection {
       background-color: #000;
     }
@@ -43,6 +54,10 @@
       position: absolute;
       height: 2px;
       background-color: #fff;
+      @media (max-width: 850px) {
+        width: 20px;
+        left: -30px;
+      }
     }
     &::after {
       content: '';
@@ -52,6 +67,10 @@
       position: absolute;
       height: 2px;
       background-color: #fff;
+      @media (max-width: 850px) {
+        width: 20px;
+        right: -30px;
+      }
     }
   }
   &Men {
