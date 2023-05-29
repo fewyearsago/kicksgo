@@ -13,6 +13,9 @@
   @media (max-width: 960px) {
     padding: 25px;
   }
+  @media (max-width: 426px) {
+    padding: 50px 0 0 0;
+  }
   &Catalog {
     &List {
       display: grid;
