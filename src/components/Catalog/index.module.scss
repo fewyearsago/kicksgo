@@ -5,6 +5,9 @@
   margin: 0 auto;
   padding: 0 10px;
   min-height: 100%;
+  @media (max-width: 900px) {
+    padding: 0 10px 100px 10px;
+  }
 }
 
 .root {
