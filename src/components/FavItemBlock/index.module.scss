@@ -9,9 +9,16 @@
   &:hover {
     box-shadow: 1px 3px 10px #9b9b9b;
     border-radius: 10px;
+    @media (max-width: 1000px) {
+      box-shadow: none;
+    }
   }
   &Img {
     width: 250px;
+    @media (max-width: 800px) {
+      width: 180px;
+      margin-bottom: 20px;
+    }
   }
   &Title {
     font-size: 20px;
@@ -39,7 +46,7 @@
     &Btn {
       font-weight: 700;
       position: relative;
-      z-index: 1000001;
+      z-index: 1000;
       border: none;
       background-color: transparent;
       padding: 5px 12px;

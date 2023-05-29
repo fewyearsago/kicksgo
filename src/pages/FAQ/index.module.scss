@@ -28,6 +28,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      span {
+        margin-left: 10px;
+      }
+      @media (max-width: 860px) {
+        font-size: 22px;
+      }
     }
     &Text {
       max-height: 0;
@@ -44,6 +50,9 @@
     }
     &AnswerText {
       margin-bottom: 10px;
+      @media (max-width: 860px) {
+        font-size: 16px;
+      }
     }
   }
 }
@@ -54,4 +63,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 860px) {
+    padding: 200px 40px 100px 40px;
+  }
 }
