@@ -53,8 +53,8 @@
 
 .container {
   display: flex;
-
+  position: relative;
   justify-content: center;
-  padding: 300px 0 0 10px;
+  padding: 300px 0 100px 10px;
   min-height: 100%;
 }

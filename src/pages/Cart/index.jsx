@@ -38,7 +38,7 @@ const Cart = () => {
             ))}
           </div>
           <div className={style.rootCartFooter}>
-            <div className={style.rootCartSum}>Сумма заказа: {totalPrice}$</div>
+            <div className={style.rootCartSum}>Сумма заказа: {totalPrice.toFixed(2)}$</div>
             <button>Оплатить сейчас</button>
           </div>
         </div>
