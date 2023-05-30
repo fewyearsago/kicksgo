@@ -99,6 +99,9 @@
       text-decoration: none;
       font-size: 2rem;
       font-family: 'Gugi', cursive;
+      @media (max-width: 1200px) {
+        margin-left: 10px;
+      }
     }
     &Menu {
       display: flex;
