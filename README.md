@@ -16,7 +16,7 @@ npm start<br>
 
 Онлайн-доступ<br>
 <b>Вы также можете посетить онлайн-версию Kicksgo, перейдя по следующей ссылке: https://kicksgo.vercel.app/.<br></b>
-
+<img src="https://mini.s-shot.ru/1600x0/JPEG/1600/Z100/?https%3A%2F%2Fkicksgo.vercel.app%2F">
 
 Технологии<br>
 Проект Kicksgo был разработан с использованием следующих технологий:<br>
