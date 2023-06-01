@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './index.module.scss';
 import ImgForMen from '../../../public/1.png';
 import ImgForWomen from '../../../public/2.png';

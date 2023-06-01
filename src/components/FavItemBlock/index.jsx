@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './index.module.scss';
 import { useDispatch } from 'react-redux';
 import { remItem } from '../../redux/slices/favoriteSlice';
