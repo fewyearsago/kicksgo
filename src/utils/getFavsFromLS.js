@@ -1,7 +1,10 @@
 export const getFavsFromLS = () => {
-  const data = localStorage.getItem('favs');
-  const items = data ? JSON.parse(data) : [];
+  const favs = localStorage.getItem('favs');
+  const items = favs ? JSON.parse(favs) : [];
+  const isFavs = localStorage.getItem('isFavs');
+  const isFavorite = isFavs ? JSON.parse(isFavs) : [];
   return {
     items,
+    isFavorite,
   };
 };

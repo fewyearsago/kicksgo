@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getFavsFromLS } from '../../../utils/getFavsFromLS';
 
-const { items } = getFavsFromLS();
+const { items, isFavorite } = getFavsFromLS();
 
 const initialState = {
   items,
-  isFavorite: [],
+  isFavorite,
 };
 
 export const favoriteSlice = createSlice({
@@ -46,7 +46,6 @@ export const favoriteSlice = createSlice({
   },
 });
 
-export const { addItem, toggleFavorite, remItem, clearItems } =
-  favoriteSlice.actions;
+export const { addItem, toggleFavorite, remItem, clearItems } = favoriteSlice.actions;
 
 export default favoriteSlice.reducer;

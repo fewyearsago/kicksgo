@@ -7,6 +7,12 @@
 
   &Title {
     font-size: 60px;
+    @media (max-width: 720px) {
+      font-size: 40px;
+    }
+    @media (max-width: 426px) {
+      font-size: 35px;
+    }
   }
   &Btn {
     font-family: 'Nunito';
@@ -17,6 +23,12 @@
     cursor: pointer;
     background-color: transparent;
     margin-top: 20px;
+    @media (max-width: 720px) {
+      font-size: 26px;
+    }
+    @media (max-width: 426px) {
+      font-size: 23px;
+    }
   }
 }
 .container {
