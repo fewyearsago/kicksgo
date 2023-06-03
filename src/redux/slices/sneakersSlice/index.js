@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-export const fetchSneakers = createAsyncThunk('sneakers/fetchSneakereStatus', async (params) => {
+export const fetchSneakers = createAsyncThunk('sneakers/fetchSneakersStatus', async (params) => {
   const { currentPage, ShortOrder, ShortSortBy } = params;
   const { data } = await axios.get(
     `https://644189e3792fe886a8aa1467.mockapi.io/items?page=${currentPage}&limit=4&sortBy=${ShortSortBy}&order=${ShortOrder}`,
