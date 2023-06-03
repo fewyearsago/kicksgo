@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import style from './index.module.scss';
 import '../../index.css';
+import { selectFavorites, selectIsFavorites } from '../../redux/slices/favoriteSlice/selectors';
+import { selectCart } from '../../redux/slices/cartSlice/selectors';
 const Header = () => {
   const list = [
     { name: 'FAQ', href: '/FAQ' },
@@ -10,9 +12,9 @@ const Header = () => {
     { name: 'Контакты', href: '/contacts' },
   ];
   const isMounted = React.useRef(false);
-  const favs = useSelector((state) => state.favorite.items);
-  const isFavs = useSelector((state) => state.favorite.isFavorite);
-  const items = useSelector((state) => state.cartSlice.items);
+  const favs = useSelector(selectFavorites);
+  const isFavs = useSelector(selectIsFavorites);
+  const { items } = useSelector(selectCart);
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
   const burgerRef = React.useRef();
   const burgerBtn = React.useRef();

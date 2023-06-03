@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import FavItemBlock from '../../components/FavItemBlock';
 import { clearItems } from '../../redux/slices/favoriteSlice';
+import { selectFavorites } from '../../redux/slices/favoriteSlice/selectors';
 import style from './index.module.scss';
 import favsImg from '../../../public/favs.png';
 
 const Favorites = () => {
-  const favs = useSelector((state) => state.favorite.items);
+  const favs = useSelector(selectFavorites);
   const dispatch = useDispatch();
   const onClickClearFavs = () => {
     if (window.confirm('Действительно очистить список?')) dispatch(clearItems());

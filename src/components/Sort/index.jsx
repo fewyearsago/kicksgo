@@ -1,12 +1,13 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSortType } from '../../redux/slices/filtersSlice';
+import { selectFilters } from '../../redux/slices/filtersSlice/selectors';
 import style from './index.module.scss';
 
 const Sort = () => {
   const dispatch = useDispatch();
   const [open, setOpen] = React.useState(false);
-  const sortType = useSelector((state) => state.filter.sortType);
+  const { sortType } = useSelector(selectFilters);
   const sortRef = React.useRef();
   const onClickListItem = (id) => {
     dispatch(setSortType(id));
@@ -32,11 +33,7 @@ const Sort = () => {
   return (
     <div ref={sortRef} className={style.rootSort}>
       <div className={style.rootSortMain}>
-        <svg
-          height="24"
-          viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg">
+        <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
           <path d="M7 20h2V8h3L8 4 4 8h3zm13-4h-3V4h-2v12h-3l4 4z" />
         </svg>
         <span className={style.rootSortTitle} onClick={() => setOpen(!open)}>

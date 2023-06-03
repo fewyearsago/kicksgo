@@ -1,7 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCurrentPage } from '../../redux/slices/filtersSlice';
+import { selectFilters } from '../../redux/slices/filtersSlice/selectors';
 import { fetchSneakers } from '../../redux/slices/sneakersSlice';
+import { selectSneakers } from '../../redux/slices/sneakersSlice/selectors';
 import ItemBlock from '../ItemBlock';
 import Pagination from '../Pagination';
 import Skeleton from '../Skeleton';
@@ -10,8 +12,8 @@ import style from './index.module.scss';
 
 const Catalog = () => {
   const dispatch = useDispatch();
-  const { currentPage, sortType } = useSelector((state) => state.filter);
-  const { items, status } = useSelector((state) => state.sneakers);
+  const { currentPage, sortType } = useSelector(selectFilters);
+  const { items, status } = useSelector(selectSneakers);
   const ShortSkeleton = [...new Array(4)].map((_, i) => <Skeleton key={i} />);
   const ShortItemBlock = items.map((e, i) => (
     <ItemBlock

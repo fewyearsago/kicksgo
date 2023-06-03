@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toAddCartItem } from '../../redux/slices/cartSlice';
 import { addItem, toggleFavorite } from '../../redux/slices/favoriteSlice';
+import { selectIsFavorites } from '../../redux/slices/favoriteSlice/selectors';
 import style from './index.module.scss';
 
 const ItemBlock = ({ imgUrl, id, price, title, sizes }) => {
-  const favorites = useSelector((state) => state.favorite.isFavorite);
+  const favorites = useSelector(selectIsFavorites);
   const isFavorite = favorites.includes(id);
   const dispatch = useDispatch();
   const onClickAddFav = () => {
