@@ -23,6 +23,7 @@ npm start<br>
 - ReactJS
 - Redux Toolkit
 - React Router v6
+- Redux-Thunk
 - Axios
 - CSS-Modules
 - React Content Loader
